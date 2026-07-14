@@ -344,7 +344,7 @@ Patient records remain separate from queue history, allowing the same patient to
 
 - [x] Initialize Repository
 - [x] Create Project Structure
-- [ ] Configure Laragon
+- [x] Configure Laragon
 - [ ] Database Connection
 - [ ] Authentication System
 - [ ] MVC Routing
