@@ -42,3 +42,15 @@
 | remarks           | TEXT     |
 | consultation_date | DATETIME |
 
+| Component       | Technology                               |
+| --------------- | ---------------------------------------- |
+| Local Server    | **Laragon**                              |
+| PHP             | PHP 8.3 or newer (included with Laragon) |
+| Web Server      | Apache (or Nginx later if you want)      |
+| Database        | MariaDB (included with Laragon)          |
+| Database Tool   | phpMyAdmin (or Adminer)                  |
+| Frontend        | HTML5 + Bootstrap 5 + Vanilla JavaScript |
+| Backend         | PHP (MVC Architecture)                   |
+| Version Control | Git + GitHub                             |
+
+
