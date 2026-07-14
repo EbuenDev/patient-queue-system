@@ -12,7 +12,7 @@
 | Reports           | ⏳      |
 
 
-|USERS                                |
+ USERS                                
 | Field    | Type                     |
 | -------- | ------------------------ |
 | id       | INT                      |
@@ -21,8 +21,7 @@
 | role     | ENUM(Admin, Doctor, BHW) |
 
 
-|PATIENTS                          |
-| -------------------------------- |
+ PATIENTS                         
 | Field             | Type         |
 | ----------------- | ------------ |
 | id                | INT          |
@@ -34,8 +33,7 @@
 | created_at        | DATETIME     |
 
 
-|CONSULTATIONS                 |
-| ---------------------------- |
+ CONSULTATIONS
 | Field             | Type     |
 | ----------------- | -------- |
 | id                | INT      |
