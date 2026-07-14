@@ -1,38 +1,12 @@
-Admin Dashboard
-+-------------------------------------------+
-
-Sidebar
-
-Dashboard
-Patients
-Queue
-History
-Logout
-
--------------------------
-
-Today's Queue
-
-Waiting : 14
-
-Serving : 1
-
-Finished : 29
-
--------------------------
-
-Patient Table
-
-------------------------------------------
-
-Name
-
-Category
-
-PhilHealth
-
-Status
-
-Action
-
-------------------------------------------
+| Feature           | Status |
+| ----------------- | ------ |
+| Project structure | ✅      |
+| Database          | ✅      |
+| Login             | ⏳      |
+| Admin Dashboard   | ⏳      |
+| Register Patient  | ⏳      |
+| Queue Logic       | ⏳      |
+| Doctor Dashboard  | ⏳      |
+| BHW Dashboard     | ⏳      |
+| Queue Display     | ⏳      |
+| Reports           | ⏳      |
