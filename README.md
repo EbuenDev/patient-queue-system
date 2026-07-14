@@ -240,6 +240,56 @@ Consultation Completed
 ```
 
 ---
+# ⭐ Core Features
+
+### Patient Registration
+
+- Register new patients
+- Search existing patients
+- Prevent duplicate patient records
+- Edit existing patient information
+
+### Intelligent Queue Management
+
+The system automatically organizes the queue based on patient priority.
+
+Priority Order:
+
+1. Emergency
+2. PWD
+3. Senior Citizen
+4. Regular
+
+To ensure fairness, **Regular patients are not starved**. The queue algorithm balances priority with fairness so that Regular patients continue to be served even when higher-priority patients are present.
+
+### Queue Operations
+
+- Generate Queue Number
+- Call Next Patient
+- Skip Patient
+- Cancel Queue
+- Complete Consultation
+- Queue History
+
+### Doctor Module
+
+- View Current Patient
+- Call Next Patient
+- Complete Consultation
+- Consultation History
+
+### Patient Record Management
+
+The Admin can:
+
+- Search patients
+- Update patient information
+- Change patient category
+- Update PhilHealth status
+- Correct registration mistakes
+
+Patient records remain separate from queue history, allowing the same patient to return multiple times without creating duplicate records.
+---
 
 # 📌 Planned Features
 
@@ -257,7 +307,11 @@ Consultation Completed
 
 - Register Patient
 - Search Patient
+- View Patient Profile
 - Edit Patient Information
+- Update Patient Category
+- Update PhilHealth Status
+- Prevent Duplicate Patient Records
 
 ---
 
@@ -296,6 +350,8 @@ Consultation Completed
 - [ ] MVC Routing
 - [ ] Admin Dashboard
 - [ ] Patient Registration
+- [ ] Patient Record Management
+- [ ] Intelligent Queue Algorithm
 - [ ] Queue Management
 - [ ] Doctor Dashboard
 - [ ] BHW Dashboard
