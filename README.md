@@ -1,56 +1,330 @@
-| Feature           | Status |
-| ----------------- | ------ |
-| Project structure | ✅      |
-| Database          | ✅      |
-| Login             | ⏳      |
-| Admin Dashboard   | ⏳      |
-| Register Patient  | ⏳      |
-| Queue Logic       | ⏳      |
-| Doctor Dashboard  | ⏳      |
-| BHW Dashboard     | ⏳      |
-| Queue Display     | ⏳      |
-| Reports           | ⏳      |
+# 🏥 Patient Queue Management System
 
+A modern Patient Queue Management System built with **Plain PHP (MVC Architecture)** for Rural Health Units (RHU), Clinics, and Small Healthcare Facilities.
 
- USERS                                
-| Field    | Type                     |
-| -------- | ------------------------ |
-| id       | INT                      |
-| username | VARCHAR                  |
-| password | VARCHAR                  |
-| role     | ENUM(Admin, Doctor, BHW) |
+This project focuses on simplicity, maintainability, and clean architecture while following modern software development practices.
 
+> **Project Status:** 🚧 Under Development
 
- PATIENTS                         
-| Field             | Type         |
-| ----------------- | ------------ |
-| id                | INT          |
-| fullname          | VARCHAR(255) |
-| category          | ENUM         |
-| philhealth_status | ENUM         |
-| queue_number      | INT          |
-| queue_status      | ENUM         |
-| created_at        | DATETIME     |
+---
 
+# 📖 Overview
 
- CONSULTATIONS
-| Field             | Type     |
-| ----------------- | -------- |
-| id                | INT      |
-| patient_id        | INT      |
-| doctor_id         | INT      |
-| remarks           | TEXT     |
-| consultation_date | DATETIME |
+The Patient Queue Management System helps healthcare staff efficiently manage patient registration and queueing during daily operations.
 
-| Component       | Technology                               |
-| --------------- | ---------------------------------------- |
-| Local Server    | **Laragon**                              |
-| PHP             | PHP 8.3 or newer (included with Laragon) |
-| Web Server      | Apache (or Nginx later if you want)      |
-| Database        | MariaDB (included with Laragon)          |
-| Database Tool   | phpMyAdmin (or Adminer)                  |
-| Frontend        | HTML5 + Bootstrap 5 + Vanilla JavaScript |
-| Backend         | PHP (MVC Architecture)                   |
-| Version Control | Git + GitHub                             |
+Unlike self-service queue systems, this system follows the actual workflow used in many Rural Health Units where **patients are interviewed first by the Admin**, who verifies their information before adding them to the queue.
 
+---
 
+# 🎯 Objectives
+
+- Build a clean and maintainable PHP application.
+- Practice MVC architecture without using a framework.
+- Learn modern PHP development.
+- Create a real-world portfolio project.
+- Keep the project simple and easy to debug.
+
+---
+
+# 🛠 Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| PHP 8.x | Backend |
+| MariaDB | Database |
+| Laragon | Local Development Environment |
+| HTML5 | Frontend |
+| Bootstrap 5 | User Interface |
+| JavaScript (Vanilla) | Client-side Interactivity |
+| Composer | Autoloading |
+| Git & GitHub | Version Control |
+
+---
+
+# 🏗 Architecture
+
+This project follows the **Model-View-Controller (MVC)** architecture.
+
+```
+Client
+   │
+   ▼
+Controller
+   │
+   ├── Model
+   │      │
+   │      ▼
+   │   Database
+   │
+   ▼
+View
+```
+
+Business logic is separated from presentation, making the project easier to maintain and debug.
+
+---
+
+# 📂 Project Structure
+
+```
+patient-queue-system/
+
+├── app/
+│   ├── Controllers/
+│   ├── Models/
+│   ├── Services/
+│   ├── Middleware/
+│   ├── Helpers/
+│   └── Core/
+│
+├── config/
+│
+├── database/
+│   ├── migrations/
+│   └── seeds/
+│
+├── public/
+│   ├── admin/
+│   ├── doctor/
+│   ├── bhw/
+│   ├── display/
+│   └── assets/
+│
+├── routes/
+│
+├── storage/
+│
+├── .env
+├── composer.json
+└── README.md
+```
+
+---
+
+# 👥 User Roles
+
+## Admin
+
+Responsible for:
+
+- Login
+- Interview patient
+- Verify PhilHealth status
+- Register patients
+- Generate queue number
+- Manage queue
+- View reports
+
+---
+
+## Doctor
+
+Responsible for:
+
+- View current patient
+- Call next patient
+- Complete consultation
+- View consultation history
+
+---
+
+## BHW
+
+Responsible for:
+
+- View queue
+- Search patient
+- Assist patient registration
+
+---
+
+## Queue Display
+
+Public display showing:
+
+- Now Serving
+- Next Queue Numbers
+- Waiting Patients
+
+---
+
+# 🗄 Database Design
+
+## users
+
+- id
+- username
+- password
+- role
+- created_at
+
+---
+
+## patients
+
+- id
+- fullname
+- category
+- philhealth_status
+- created_at
+- updated_at
+
+---
+
+## queues
+
+- id
+- patient_id
+- queue_number
+- queue_status
+- created_at
+
+---
+
+## consultations
+
+- id
+- queue_id
+- doctor_id
+- remarks
+- consultation_date
+
+---
+
+# 🏥 Patient Categories
+
+- Regular
+- Senior Citizen
+- PWD
+- Emergency
+
+---
+
+# 💳 PhilHealth Status
+
+- Registered
+- Not Registered
+- Other Facility
+- No PhilHealth
+
+---
+
+# 🔄 System Workflow
+
+```
+Patient Arrives
+        │
+        ▼
+Admin Interviews Patient
+        │
+        ▼
+Verify PhilHealth
+        │
+        ▼
+Register Patient
+        │
+        ▼
+Assign Category
+        │
+        ▼
+Generate Queue Number
+        │
+        ▼
+Patient Waits
+        │
+        ▼
+Doctor Calls Patient
+        │
+        ▼
+Consultation Completed
+```
+
+---
+
+# 📌 Planned Features
+
+## Authentication
+
+- Admin Login
+- Doctor Login
+- BHW Login
+- Session Management
+- Role-Based Access
+
+---
+
+## Patient Management
+
+- Register Patient
+- Search Patient
+- Edit Patient Information
+
+---
+
+## Queue Management
+
+- Generate Queue Number
+- Call Next
+- Skip Queue
+- Cancel Queue
+- Queue History
+
+---
+
+## Doctor Module
+
+- Current Patient
+- Finish Consultation
+- Consultation History
+
+---
+
+## Reports
+
+- Daily Queue Report
+- Consultation Report
+
+---
+
+# 🚀 Development Roadmap
+
+- [x] Initialize Repository
+- [x] Create Project Structure
+- [ ] Configure Laragon
+- [ ] Database Connection
+- [ ] Authentication System
+- [ ] MVC Routing
+- [ ] Admin Dashboard
+- [ ] Patient Registration
+- [ ] Queue Management
+- [ ] Doctor Dashboard
+- [ ] BHW Dashboard
+- [ ] Queue Display
+- [ ] Reports
+- [ ] Final Testing
+
+---
+
+# 🎯 Learning Goals
+
+This project is intended to help learn:
+
+- PHP Fundamentals
+- MVC Architecture
+- Object-Oriented Programming
+- REST API Design
+- Authentication
+- Session Management
+- Database Design
+- Git Workflow
+- Clean Code Principles
+
+---
+
+# 📄 License
+
+This project is for educational and portfolio purposes.
+
+---
+
+Developed with ❤️ using Plain PHP and MVC Architecture.
